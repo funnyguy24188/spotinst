@@ -1,0 +1,25 @@
+{
+    "name": "spotinst/spotinst-php",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=5.6",
+        "ext-json": "^1.6",
+        "guzzlehttp/guzzle": "^6.3@dev"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "psr-4": {
+            "SpotInst\\": ["src"]
+        }
+    },
+    "authors": [
+        {
+            "name": "Triet Le",
+            "email": "triet.le@codeforcevina.com"
+        }
+    ],
+    "minimum-stability" : "dev"
+}
