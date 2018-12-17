@@ -1,30 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7102969f-3a59-452b-9974-e75887adea92" name="Default Changelist" comment="" />
+    <list default="true" id="7102969f-3a59-452b-9974-e75887adea92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/BaseApi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spotinst-php/src/Exception/NotValidParam.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/SpotTabsInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElasticGroup/AWS/ElasticGroupApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/ElasticGroupApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElasticGroup/AWS/StatefulInstApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/StatefulInstApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/EmptyParamException.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Exception/EmptyParamException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Providers/SpotInstProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Providers/SpotInstProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpotInstClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/SpotInstClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpotInstClientInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/SpotInstClientInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/Capacity.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/Capacity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/Compute.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/Compute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/General.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/General.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/ScalingDown.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/ScalingDown.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/ScalingUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/ScalingUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/Scheduling.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/Scheduling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/Stragery.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/Stragery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/TabBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/TabBase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/TabsInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/TabsInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/ThirdPartiesIntergration.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/ThirdPartiesIntergration.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="669205166">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="json" value="1" />
+          <entry key="php" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
+          <entry key="PHP" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -40,25 +67,63 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+            <state relative-caret-position="240">
+              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/ElasticGroupApi.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1455">
+              <caret line="97" column="41" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="41" />
+              <folding>
+                <element signature="e#45#81#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/StatefulInstApi.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spotinst-php/src/Exception/EmptyParamException.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spotinst-php/src/Providers/SpotInstProvider.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spotinst-php/src/Tabs/Compute.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spotinst-php/src/Tabs/ScalingUp.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/ElasticGroupApi.php" />
       </list>
     </option>
   </component>
@@ -67,6 +132,16 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-3" />
@@ -79,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -90,12 +164,48 @@
             <path>
               <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
               <item name="spotinst" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
+              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
+              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ElasticGroup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
+              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ElasticGroup" type="462c0819:PsiDirectoryNode" />
+              <item name="AWS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
+              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
+              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -104,6 +214,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spotinst-php/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spotinst-php" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -128,23 +246,20 @@
       <option name="presentableId" value="Default" />
       <updated>1543823925773</updated>
       <workItem from="1543823926829" duration="949000" />
+      <workItem from="1545031193808" duration="349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="949000" />
+    <option name="totallyTimeSpent" value="1298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1052" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -152,10 +267,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,8 +287,33 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="240">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spotinst-php/src/Exception/EmptyParamException.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spotinst-php/src/Providers/SpotInstProvider.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spotinst-php/src/Tabs/Compute.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spotinst-php/src/Tabs/ScalingUp.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/StatefulInstApi.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/ElasticGroupApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="97" column="41" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="41" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

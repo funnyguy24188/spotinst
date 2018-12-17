@@ -21,10 +21,10 @@ class SpotInstProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
 
-        $accountId = config('SPOTINST_ACCOUNT_ID');
-        $accessToken = config('SPOTINST_ACCESS_TOKEN');
-        
-        $this->app->singleton(\SpotInst\SpotInstClientInterface::class, function () {
+        $accountId = env('SPOTINST_ACCOUNT_ID');
+        $accessToken = env('SPOTINST_ACCESS_TOKEN');
+
+        $this->app->singleton(\SpotInst\SpotInstClientInterface::class, function () use($accountId, $accessToken) {
             return new \SpotInst\SpotInstClient($accountId, $accessToken);
         });
 

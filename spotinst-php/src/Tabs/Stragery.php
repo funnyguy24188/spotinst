@@ -8,12 +8,12 @@
 
 namespace SpotInst\Tabs;
 
-class Stragery extends \SpotInst\Tabs\TabBase implements TabsInterface
+class Stragery extends \SpotInst\Tabs\TabBase implements \SpotTabsInterface
 {
 
     public function validate()
     {
-       $validator = Validator::make([],  $this->data);
+       $validator = \Validator::make($this->data, []);
        return $validator;
     }
 

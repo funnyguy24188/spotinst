@@ -16,26 +16,26 @@ interface SpotInstClientInterface
      * @param array $jsonData
      * @return mixed
      */
-    public function get(string $uri, array $jsonData);
+    public function get(string $uri, array $jsonData = []);
 
     /**
      * @param string $uri
      * @param array $jsonData
      * @return mixed
      */
-    public function post(string $uri, array $jsonData);
+    public function post(string $uri, array $jsonData = []);
 
     /**
      * @param string $uri
      * @param array $jsonData
      * @return mixed
      */
-    public function put(string $uri, array $jsonData);
+    public function put(string $uri, array $jsonData = []);
 
     /**
      * @param string $uri
      * @param array $jsonData
      * @return mixed
      */
-    public function delete(string $uri, array $jsonData);
+    public function delete(string $uri, array $jsonData = []);
 }

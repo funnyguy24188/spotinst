@@ -28,6 +28,8 @@ class TabBase
                 if (isset($data[$key])) {
                     $data = $data[$key];
                     $ret = $data;
+                } else {
+                    $ret = null;
                 }
             }
         } else {
