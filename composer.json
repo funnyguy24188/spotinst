@@ -13,7 +13,7 @@
             "src"
         ],
         "psr-4": {
-            "SpotInst\\": ["src"]
+            "SpotInst\\": ["spotinst-php/src"]
         }
     },
     "authors": [
