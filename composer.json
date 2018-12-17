@@ -1,5 +1,5 @@
 {
-    "name": "spotinst",
+    "name": "spotinst/spotinst-php",
     "license": "MIT",
     "type": "library",
     "require": {

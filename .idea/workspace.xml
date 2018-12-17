@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7102969f-3a59-452b-9974-e75887adea92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/BaseApi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spotinst-php/src/Exception/NotValidParam.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/SpotTabsInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spotinst.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spotinst.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElasticGroup/AWS/ElasticGroupApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/ElasticGroupApi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElasticGroup/AWS/StatefulInstApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/StatefulInstApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElasticGroup/BaseApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/BaseApi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exception/EmptyParamException.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Exception/EmptyParamException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/NotValidParam.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Exception/NotValidParam.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Providers/SpotInstProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Providers/SpotInstProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SpotInstClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/SpotInstClient.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SpotInstClientInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/SpotInstClientInterface.php" afterDir="false" />
@@ -19,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/src/Tabs/ScalingDown.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/ScalingDown.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tabs/ScalingUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/ScalingUp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tabs/Scheduling.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/Scheduling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabs/SpotTabsInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/SpotTabsInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tabs/Stragery.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/Stragery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tabs/TabBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/TabBase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tabs/TabsInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/spotinst-php/src/Tabs/TabsInterface.php" afterDir="false" />
@@ -68,16 +69,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+            <state relative-caret-position="15">
+              <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/ElasticGroupApi.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1455">
@@ -96,7 +97,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spotinst-php/src/Exception/EmptyParamException.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="50" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="50" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -122,8 +127,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/spotinst-php/src/ElasticGroup/AWS/ElasticGroupApi.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -166,41 +171,6 @@
               <item name="spotinst" type="462c0819:PsiDirectoryNode" />
               <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
-              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
-              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ElasticGroup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
-              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ElasticGroup" type="462c0819:PsiDirectoryNode" />
-              <item name="AWS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
-              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotinst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotinst" type="462c0819:PsiDirectoryNode" />
-              <item name="spotinst-php" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -221,6 +191,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/spotinst-php" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,12 +217,12 @@
       <option name="presentableId" value="Default" />
       <updated>1543823925773</updated>
       <workItem from="1543823926829" duration="949000" />
-      <workItem from="1545031193808" duration="349000" />
+      <workItem from="1545031193808" duration="1591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1298000" />
+    <option name="totallyTimeSpent" value="2540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1052" extended-state="6" />
@@ -285,16 +256,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spotinst-php/src/Exception/EmptyParamException.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/spotinst-php/src/Providers/SpotInstProvider.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -314,6 +275,20 @@
           <folding>
             <element signature="e#45#81#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spotinst-php/src/Exception/EmptyParamException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="34" />
         </state>
       </provider>
     </entry>
