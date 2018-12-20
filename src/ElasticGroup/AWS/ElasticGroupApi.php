@@ -86,15 +86,24 @@ class ElasticGroupApi extends BaseApi
                 'strategy' => $this->tabs['stragery']->build(),
                 'compute' =>  $this->tabs['compute']->build(),
                 'thirdPartiesIntegration' => $this->tabs['thirdparty']->build(),
+                'multai' => null,
                 'scheduling' => new \stdClass(),
                 'scaling' => new \stdClass(),
 
             ],
 
         ];
+
+
         return  $this->client->post($uri, $jsonData);
     }
 
+    /**
+     * Update capacity of group
+     * @param string $groupId
+     * @param $data
+     * @return array|mixed
+     */
     public function updateCapacity(string $groupId, $data) {
 
         $validator = \Validator::make($data,[
@@ -123,5 +132,33 @@ class ElasticGroupApi extends BaseApi
         return $this->client->put($uri, $jsonData);
     }
 
+    /**
+     * Get heath of a group
+     * @param string $groupId
+     * @return mixed
+     */
+    public function getHealthiness(string $groupId) {
+        $uri = 'aws/ec2/group/{GROUP_ID}/instanceHealthiness?accountId={ACCOUNT_ID}';
+        $uri = str_replace('{GROUP_ID}', $groupId, $uri);
+        return $this->client->get($uri, []);
+    }
+
+    /**
+     * Delete a group
+     * @param string $groupId
+     */
+    public function deleteGroup(string $groupId) {
+        $uri = 'aws/ec2/group/{GROUP_ID}?accountId={ACCOUNT_ID}';
+        $uri = str_replace('{GROUP_ID}', $groupId, $uri);
+        $jsonData = [
+            'statefulDeallocation' => [
+                'shouldDeleteImages'=> true,
+                'shouldDeleteNetworkInterfaces'=> true,
+                'shouldDeleteVolumes'=> true,
+                'shouldDeleteSnapshots'=> true
+            ]
+        ];
+        return $this->client->delete($uri, $jsonData);
+    }
 
 }

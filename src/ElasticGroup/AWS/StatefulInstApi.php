@@ -48,4 +48,17 @@ class StatefulInstApi extends BaseApi
         return  $this->client->get($uri, []);
     }
 
+    /**
+     * Get a list of stateful instance
+     * @param $groupId
+     * @return mixed
+     */
+    public function terminateStatefulInst($groupId, $statefulInstId) {
+        $uri = 'aws/ec2/group/{GROUP_ID}/statefulInstance/{STATEFUL_INSTANCE_ID}/deallocate?accountId={ACCOUNT_ID}';
+        $uri = str_replace(['{GROUP_ID}','{STATEFUL_INSTANCE_ID}'], [$groupId, $statefulInstId], $uri);
+        var_dump($uri);die;
+        return  $this->client->put($uri, []);
+    }
+
+
 }

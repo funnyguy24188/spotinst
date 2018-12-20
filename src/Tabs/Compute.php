@@ -42,27 +42,35 @@ class Compute extends TabBase implements \SpotTabsInterface
                         'deviceIndex' => 0
                     ]
                 ],
-                'imageId' => $this->getData('group.compute.launchSpecification.imageId', 'ami-c63d6aa5'),
+                //'imageId' => $this->getData('group.compute.launchSpecification.imageId', 'ami-c63d6aa5'),
+                'imageId' => 'ami-c63d6aa5',
                 'keyPair' => $this->getData('group.compute.launchSpecification.keyPair'),
                 'ebsOptimized' => false,
+                "healthCheckType" => null,
+                "tenancy"=> "default",
                 'iamRole' => [
                     'name' => null,
                     'arn' => $this->getData('group.compute.launchSpecification.iamRole.arn')
                 ]
-            ]
+            ],
+            'elasticIps'=> null
 
         ];
+        
+        if(env('SPOTINST_THIRDPARTY_TYPE')) {
+            $arr['launchSpecification']['userData']  = ThirdPartiesIntergration::getOpsWorksUserData();
+        }
 
         if(empty($arr['tags'])) {
             unset($arr['tags']);
         }
 
         if(empty($arr['privateIps'])) {
-            unset($arr['privateIps']);
+            $arr['privateIps'] = null;
         }
 
         if(empty($arr['elasticIps'])) {
-            unset($arr['elasticIps']);
+            $arr['elasticIps'] = null;
         }
 
         return $arr;

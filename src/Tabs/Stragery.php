@@ -24,10 +24,10 @@ class Stragery extends \SpotInst\Tabs\TabBase implements \SpotTabsInterface
             "availabilityVsCost" => "costOriented",
             "fallbackToOd" => true,
             "persistence" => [
-                "shouldPersistPrivateIp" => true,
-                "shouldPersistBlockDevices" => true,
+            //    "shouldPersistPrivateIp" => true,
+            //    "shouldPersistBlockDevices" => true,
                 "shouldPersistRootDevice" => true,
-                "blockDevicesMode" => "onLaunch"
+            //    "blockDevicesMode" => "onLaunch"
             ],
             "revertToSpot" => [
                 "performAt" => 'always'
