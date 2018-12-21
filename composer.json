@@ -21,6 +21,5 @@
             "email": "triet.le@codeforcevina.com"
         }
     ],
-    "minimum- " : "dev",
-    "version": "0.0.2"
+    "minimum-stability" : "dev"
 }
