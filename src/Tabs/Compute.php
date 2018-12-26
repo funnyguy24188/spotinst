@@ -2,6 +2,7 @@
 namespace SpotInst\Tabs;
 
 use Illuminate\Validation\Validator;
+use SpotInst\ElasticGroup\AWS\ElasticGroupApi;
 
 class Compute extends TabBase implements \SpotTabsInterface
 {
@@ -18,12 +19,17 @@ class Compute extends TabBase implements \SpotTabsInterface
         ]);
     }
 
-    public function build()
+    public function build(array $config)
     {
+        $thirdPartyType = $config['thirdPartyType'];
+        $layerId = $config['layerId'];
+        $stackType = $config['stackType'];
+        $stackId = $config['stackId'];
 
+        $defaultInstance = (!empty($config['defaultInstance']) ? $config['defaultInstance'] : $this->getData('group.compute.instanceTypes.ondemand'));
         $arr =  [
             'instanceTypes' => [
-                'ondemand' => config('SPOTINST_ONDEMAND_INST_DEFAULT', 't2.micro'),
+                'ondemand' => $defaultInstance,
                 'spot' => $this->getData('group.compute.instanceTypes.spot')
             ],
             'availabilityZones' =>  $this->getData('group.compute.availabilityZones'),
@@ -57,8 +63,8 @@ class Compute extends TabBase implements \SpotTabsInterface
 
         ];
         
-        if(env('SPOTINST_THIRDPARTY_TYPE')) {
-            $arr['launchSpecification']['userData']  = ThirdPartiesIntergration::getOpsWorksUserData();
+        if($thirdPartyType == ThirdPartiesIntergration::THIRDPARTY_OPSWORKS_TYPE) {
+            $arr['launchSpecification']['userData']  = ThirdPartiesIntergration::getOpsWorksUserData($stackId, $stackType, $layerId);
         }
 
         if(empty($arr['tags'])) {

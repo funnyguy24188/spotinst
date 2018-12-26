@@ -12,36 +12,46 @@ class ThirdPartiesIntergration extends \SpotInst\Tabs\TabBase implements \SpotTa
 
     }
 
-    public function build()
+    /**
+     * @param string $thirdPartyType
+     * @param string $layerId
+     * @param string $stackType
+     * @return mixed|\stdClass
+     */
+    public function build(array $config)
     {
-        $thirdPartyType = config('devbox.resources.spotinst_thirdparty');
+
+        $thirdPartyType = $config['thirdPartyType'];
+        $layerId = $config['layerId'];
+        $stackType = $config['stackType'];
+        $stackId = $config['stackId'];
+
         $arr = new \stdClass();
+        foreach ($thirdPartyType as $thirdParty) {
+                switch ($thirdParty) {
+                    case self::THIRDPARTY_OPSWORKS_TYPE:
+                        {
+                            $arr->opsWorks = [
+                                'layerId' => $layerId,
+                                'stackType' => $stackType
+                            ];
 
-        if($thirdPartyType) {
-            switch ($thirdPartyType) {
-                case self::THIRDPARTY_OPSWORKS_TYPE: {
-                    $layerId = env('SPOTINST_THIRDPARTY_OPSWORKS_LAYER_ID');
-                    $stackType = env('SPOTINST_THIRDPARTY_OPSWORKS_STACKTYPE');
-                    $arr->opsWorks =  [
-                                    'layerId' => $layerId,
-                                    'stackType' => $stackType
-                                ];
-
-                    break;
+                            break;
+                        }
                 }
-            }
+
         }
         return $arr;
     }
 
     /**
      * Generate user data for OpsWorks config
+     * @param string $stackId
+     * @param string $layerId
+     * @param string $stackType
      * @return string
      */
-    public static function getOpsWorksUserData() {
-        $layerId = env('SPOTINST_THIRDPARTY_OPSWORKS_LAYER_ID');
-        $stackId = env('SPOTINST_THIRDPARTY_OPSWORKS_STACK_ID');
-        $stackType = env('SPOTINST_THIRDPARTY_OPSWORKS_STACKTYPE');
+    public static function getOpsWorksUserData(string $stackId, string $stackType, string $layerId ) {
 
         $opsWorksPatten = <<<RAW
                             #!/bin/bash

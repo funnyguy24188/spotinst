@@ -52,8 +52,11 @@ class SpotInstClient implements SpotInstClientInterface
 
             $response = $this->guzzleClient->request('POST', ($this->endingPoint . $uri), $guzzleRequestOptions);
         }  catch (ClientException $e) {
+            $ret = [];
             $jsonBody = json_decode($e->getResponse()->getBody());
-            $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            if(!empty($jsonBody->response->errors)) {
+                $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            }
             $response = [ 'response' => array_shift($ret) ];
             return $response;
         }
@@ -85,8 +88,11 @@ class SpotInstClient implements SpotInstClientInterface
             ];
             $response = $this->guzzleClient->request('GET', ($this->endingPoint . $uri), $guzzleRequestOptions);
         } catch (ClientException $e) {
+            $ret = [];
             $jsonBody = json_decode($e->getResponse()->getBody());
-            $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            if(!empty($jsonBody->response->errors)) {
+                $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            }
             $response = [ 'response' => array_shift($ret) ];
             return $response;
         }
@@ -116,8 +122,11 @@ class SpotInstClient implements SpotInstClientInterface
             ];
             $response = $this->guzzleClient->request('PUT', ($this->endingPoint . $uri), $guzzleRequestOptions);
         } catch (ClientException $e) {
+            $ret = [];
             $jsonBody = json_decode($e->getResponse()->getBody());
-            $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            if(!empty($jsonBody->response->errors)) {
+                $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            }
             $response = [ 'response' => array_shift($ret) ];
             return $response;
         }
@@ -147,8 +156,11 @@ class SpotInstClient implements SpotInstClientInterface
             ];
             $response = $this->guzzleClient->request('DELETE', ($this->endingPoint . $uri), $guzzleRequestOptions);
         } catch (ClientException $e) {
+            $ret = [];
             $jsonBody = json_decode($e->getResponse()->getBody());
-            $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            if(!empty($jsonBody->response->errors)) {
+                $ret = json_decode(json_encode($jsonBody->response->errors),true);
+            }
             $response = [ 'response' => array_shift($ret) ];
             return $response;
         }

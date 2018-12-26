@@ -4,6 +4,7 @@ namespace SpotInst\ElasticGroup\AWS;
 
 use Illuminate\Validation\Validator;
 use SpotInst\ElasticGroup\BaseApi;
+use SpotInst\Exception\InvalidConfig;
 use SpotInst\Exception\NotValidParam;
 use SpotInst\SpotInstClientInterface;
 use SpotInst\Tabs\Capacity;
@@ -24,12 +25,16 @@ class ElasticGroupApi extends BaseApi
     public function __construct(SpotInstClientInterface $spotInstClient, array $globalConfig = [])
     {
         parent::__construct($spotInstClient,$globalConfig);
+        
+        if(empty($globalConfig['pattern']) && empty($globalConfig['config'])) {
+            throw new InvalidConfig('Invalidate config');
+        }
 
         $this->tabs = [
-            'capacity' => new Capacity($globalConfig),
-            'stragery' => new Stragery($globalConfig),
-            'compute'  => new Compute($globalConfig),
-            'thirdparty' => new ThirdPartiesIntergration($globalConfig)
+            'capacity' => new Capacity($globalConfig['pattern']),
+            'stragery' => new Stragery($globalConfig['pattern']),
+            'compute'  => new Compute($globalConfig['pattern']),
+            'thirdparty' => new ThirdPartiesIntergration($globalConfig['pattern'])
         ];
 
     }
@@ -75,17 +80,15 @@ class ElasticGroupApi extends BaseApi
                 return [ 'response' => [ 'code' => NotValidParam::NOT_VALID_PARAMS, 'message' => $validator->errors() ]] ;
             }
         }
-
-
         $jsonData = [
             "group" => [
                 "name"=> $name,
                 "description" => $description,
                 "region" => $region,
-                'capacity' => $this->tabs['capacity']->build(),
-                'strategy' => $this->tabs['stragery']->build(),
-                'compute' =>  $this->tabs['compute']->build(),
-                'thirdPartiesIntegration' => $this->tabs['thirdparty']->build(),
+                'capacity' => $this->tabs['capacity']->build($this->config),
+                'strategy' => $this->tabs['stragery']->build($this->config),
+                'compute' =>  $this->tabs['compute']->build($this->config),
+                'thirdPartiesIntegration' => $this->tabs['thirdparty']->build($this->config),
                 'multai' => null,
                 'scheduling' => new \stdClass(),
                 'scaling' => new \stdClass(),
@@ -93,7 +96,6 @@ class ElasticGroupApi extends BaseApi
             ],
 
         ];
-
 
         return  $this->client->post($uri, $jsonData);
     }
@@ -159,6 +161,99 @@ class ElasticGroupApi extends BaseApi
             ]
         ];
         return $this->client->delete($uri, $jsonData);
+    }
+
+
+    /**
+     * Generate default Elastic Group config JSON for override on other service
+     * @return string
+     */
+    public static function generateDefaultPatternJson() {
+
+        $pattern = <<<RAW
+{
+  "group": {
+    "name": "",
+    "description": "",
+    "strategy": {
+      "risk": 100,
+      "onDemandCount": null,
+      "availabilityVsCost": "availabilityOriented",
+      "drainingTimeout": 120,
+      "fallbackToOd": true,
+      "lifetimePeriod": "days",
+      "persistence": {
+        "shouldPersistBlockDevices": true,
+        "shouldPersistRootDevice": true,
+        "shouldPersistPrivateIp": true,
+        "blockDevicesMode": "onLaunch"
+      },
+      "revertToSpot": {
+        "performAt": "never"
+      }
+    },
+    "capacity": {
+      "target": 1,
+      "minimum": 0,
+      "maximum": 1,
+      "unit": "instance"
+    },
+    "scaling": {},
+    "compute": {
+      "instanceTypes": {
+        "ondemand": "t2.micro",
+        "spot": [
+            "t2.small",
+          "t3.small" 
+        ]
+      },
+      "availabilityZones": [
+        {
+          "name": "ap-southeast-1a",
+          "subnetIds": [
+            "subnet-43e36627"
+          ]
+        }
+      ],
+      "product": "Linux/UNIX",
+      "launchSpecification": {
+        "loadBalancerNames": null,
+        "loadBalancersConfig": {
+          "loadBalancers": null
+        },
+        "securityGroupIds": [
+         "{SPOT_SECURITY_GROUP_ID}"
+        ],
+        "monitoring": false,
+        "ebsOptimized": false,
+        "imageId": "{SPOT_IMAGE_ID}",
+        "keyPair": "propextra-dev-ap-southeast-1",
+        "networkInterfaces": [
+          {
+            "deviceIndex": 0,
+            "associatePublicIpAddress": true,
+            "deleteOnTermination": true,
+            "associateIpv6Address": false
+          }
+        ],
+        "userData": null,
+        "shutdownScript": null,
+        "iamRole": {
+          "name": null,
+          "arn": "{SPOT_ARN}"
+        },
+        "tenancy": "default"
+      },
+      "elasticIps": null
+    }
+
+  }
+}
+
+RAW;
+
+        return $pattern;
+
     }
 
 }

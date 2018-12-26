@@ -7,9 +7,16 @@ abstract class  BaseApi
 {
     protected $data;
 
-    public function __construct(SpotInstClientInterface $spotInstClient, array $data = [])
+    protected $config;
+
+    public function __construct(SpotInstClientInterface $spotInstClient, array $config = [])
     {
-        $this->data = $data;
+        if(!empty($config['pattern'])) {
+            $this->data = $config['pattern'];
+        }
+        if(!empty($config['config'])) {
+            $this->config = $config['config'];
+        }
         $this->client = $spotInstClient;
     }
 

@@ -15,12 +15,16 @@ class Capacity extends TabBase implements \SpotTabsInterface
         ]);
     }
 
-    public function build()
+    public function build(array $config)
     {
+        $target = (!empty($config['target']) ? $config['target'] : $this->getData('group.capacity.target')) ;
+        $minimum = (!empty($config['minimum']) ? $config['minimum'] : $this->getData('group.capacity.minimum')) ;
+        $maximum = (!empty($config['maximum']) ? $config['maximum'] : $this->getData('group.capacity.maximum')) ;
+
         return [
-            'target' =>  $this->getData('group.capacity.target'),
-            'minimum' =>  $this->getData('group.capacity.minimum'),
-            'maximum'=> $this->getData('group.capacity.maximum'),
+            'target' =>  $target,
+            'minimum' =>  $minimum,
+            'maximum'=> $maximum,
             'unit' => 'instance',
         ];
     }

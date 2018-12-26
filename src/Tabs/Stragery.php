@@ -17,7 +17,7 @@ class Stragery extends \SpotInst\Tabs\TabBase implements \SpotTabsInterface
        return $validator;
     }
 
-    public function build()
+    public function build(array $config)
     {
         return [
             "risk" => 100,

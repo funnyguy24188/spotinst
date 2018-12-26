@@ -18,6 +18,6 @@ interface SpotTabsInterface
      * Build a section tab
      * @return mixed
      */
-    public function build();
+    public function build(array $config);
 
 }
