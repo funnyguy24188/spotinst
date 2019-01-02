@@ -62,9 +62,12 @@ class Compute extends TabBase implements \SpotTabsInterface
             'elasticIps'=> null
 
         ];
-        
-        if($thirdPartyType == ThirdPartiesIntergration::THIRDPARTY_OPSWORKS_TYPE) {
-            $arr['launchSpecification']['userData']  = ThirdPartiesIntergration::getOpsWorksUserData($stackId, $stackType, $layerId);
+        foreach ($thirdPartyType as $thirdParty) {
+            switch ($thirdParty) {
+                case ThirdPartiesIntergration::THIRDPARTY_OPSWORKS_TYPE:
+                    $arr['launchSpecification']['userData']  = ThirdPartiesIntergration::getOpsWorksUserData($stackId, $stackType, $layerId);
+                    break;
+            }
         }
 
         if(empty($arr['tags'])) {
