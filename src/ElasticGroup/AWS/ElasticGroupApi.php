@@ -18,7 +18,6 @@ class ElasticGroupApi extends BaseApi
     /**
      * @var SpotInstClientInterface
      */
-    protected $client;
 
     protected $tabs = [];
 

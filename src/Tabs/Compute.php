@@ -66,6 +66,8 @@ class Compute extends TabBase implements \SpotTabsInterface
             switch ($thirdParty) {
                 case ThirdPartiesIntergration::THIRDPARTY_OPSWORKS_TYPE:
                     $arr['launchSpecification']['userData']  = ThirdPartiesIntergration::getOpsWorksUserData($stackId, $stackType, $layerId);
+                    $arr['launchSpecification']['healthCheckType']  = 'OPSWORKS';
+                    $arr['launchSpecification']['healthCheckGracePeriod']  = isset( $config['gracePeriod'] ) ? $config['gracePeriod'] : 300 ;
                     break;
             }
         }

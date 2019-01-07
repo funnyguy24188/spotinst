@@ -9,6 +9,8 @@ abstract class  BaseApi
 
     protected $config;
 
+    protected $client;
+
     public function __construct(SpotInstClientInterface $spotInstClient, array $config = [])
     {
         if(!empty($config['pattern'])) {
