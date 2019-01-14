@@ -3,6 +3,8 @@ namespace SpotInst\Tabs;
 
 use Illuminate\Validation\Validator;
 use SpotInst\ElasticGroup\AWS\ElasticGroupApi;
+use SpotInst\Exception\EmptyParamException;
+use SpotInst\Exception\InvalidConfig;
 
 class Compute extends TabBase implements \SpotTabsInterface
 {
@@ -21,10 +23,20 @@ class Compute extends TabBase implements \SpotTabsInterface
 
     public function build(array $config)
     {
+
         $thirdPartyType = $config['thirdPartyType'];
         $layerId = $config['layerId'];
         $stackType = $config['stackType'];
         $stackId = $config['stackId'];
+        $userData = $config['userData'];
+        $imageId = $config['imageId'];
+        $keyPair = $config['keyPair'];
+        $product = $config['product'];
+        $tags = $config['tags'];
+
+        if(!$imageId) {
+            throw new InvalidConfig('Image Id is empty');
+        }
 
         $defaultInstance = (!empty($config['defaultInstance']) ? $config['defaultInstance'] : $this->getData('group.compute.instanceTypes.ondemand'));
         $arr =  [
@@ -34,10 +46,12 @@ class Compute extends TabBase implements \SpotTabsInterface
             ],
             'availabilityZones' =>  $this->getData('group.compute.availabilityZones'),
             'product' => 'Linux/UNIX',
-            'tags' => $this->getData('tags', []),
+
             'privateIps' => $this->getData('group.compute.privateIps'),
             'elasticIps' => $this->getData('group.compute.elasticIps'),
+            'product' => $product,
             'launchSpecification' => [
+                'tags' => $tags,
                 'securityGroupIds' => $this->getData('group.compute.launchSpecification.securityGroupIds'),
                 'monitoring' => false,
                 'networkInterfaces' => [
@@ -49,8 +63,9 @@ class Compute extends TabBase implements \SpotTabsInterface
                     ]
                 ],
                 //'imageId' => $this->getData('group.compute.launchSpecification.imageId', 'ami-c63d6aa5'),
-                'imageId' => 'ami-c63d6aa5',
-                'keyPair' => $this->getData('group.compute.launchSpecification.keyPair'),
+                'userData' => $userData,
+                'imageId' => $imageId,
+                'keyPair' => $keyPair,
                 'ebsOptimized' => false,
                 "healthCheckType" => null,
                 "tenancy"=> "default",
@@ -62,6 +77,7 @@ class Compute extends TabBase implements \SpotTabsInterface
             'elasticIps'=> null
 
         ];
+
         foreach ($thirdPartyType as $thirdParty) {
             switch ($thirdParty) {
                 case ThirdPartiesIntergration::THIRDPARTY_OPSWORKS_TYPE:

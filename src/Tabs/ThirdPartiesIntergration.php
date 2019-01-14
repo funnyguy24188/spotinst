@@ -41,6 +41,8 @@ class ThirdPartiesIntergration extends \SpotInst\Tabs\TabBase implements \SpotTa
                 }
 
         }
+
+        
         return $arr;
     }
 
@@ -64,5 +66,7 @@ bash
 RAW;
       return base64_encode($opsWorksPatten);
     }
+    
+    
 
 }

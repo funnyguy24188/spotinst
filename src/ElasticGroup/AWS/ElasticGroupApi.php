@@ -84,10 +84,10 @@ class ElasticGroupApi extends BaseApi
                 "name"=> $name,
                 "description" => $description,
                 "region" => $region,
-                'capacity' => $this->tabs['capacity']->build($this->config),
-                'strategy' => $this->tabs['stragery']->build($this->config),
-                'compute' =>  $this->tabs['compute']->build($this->config),
-                'thirdPartiesIntegration' => $this->tabs['thirdparty']->build($this->config),
+                'capacity' => $this->tabs['capacity']->build($this->config['config']),
+                'strategy' => $this->tabs['stragery']->build($this->config['config']),
+                'compute' =>  $this->tabs['compute']->build($this->config['config']),
+                'thirdPartiesIntegration' => $this->tabs['thirdparty']->build($this->config['config']),
                 'multai' => null,
                 'scheduling' => new \stdClass(),
                 'scaling' => new \stdClass(),
@@ -95,6 +95,7 @@ class ElasticGroupApi extends BaseApi
             ],
 
         ];
+        
 
         return  $this->client->post($uri, $jsonData);
     }
@@ -200,7 +201,7 @@ class ElasticGroupApi extends BaseApi
     "scaling": {},
     "compute": {
       "instanceTypes": {
-        "ondemand": "t2.micro",
+        "ondemand": "t3.small",
         "spot": [
             "t2.small",
           "t3.small" 
