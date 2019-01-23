@@ -88,7 +88,7 @@ class Compute extends TabBase implements \SpotTabsInterface
             }
         }
 
-        if(empty($arr['tags'])) {
+        if(!isset($arr['tags'])) {
             unset($arr['tags']);
         }
 
