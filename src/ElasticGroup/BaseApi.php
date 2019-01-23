@@ -41,7 +41,7 @@ abstract class  BaseApi
             $config['config']['stackId'] = isset($config['config']['stackId']) ? $config['config']['stackId'] : '';
             $config['config']['userData'] = isset($config['config']['userData']) ? $config['config']['userData'] : '';
             $config['config']['imageId'] = isset($config['config']['imageId']) ? $config['config']['imageId'] : '';
-            $config['config']['keyPair'] = isset($config['config']['keyPair']) ? $config['config']['keyPair'] : '';
+            $config['config']['keyPair'] = isset($config['config']['keyPair']) ? $config['config']['keyPair'] : null;
             $config['config']['tags'] = isset($config['config']['tags']) ? $config['config']['tags'] : '';
 
         }
