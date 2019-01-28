@@ -39,10 +39,14 @@ class Compute extends TabBase implements \SpotTabsInterface
         }
 
         $defaultInstance = (!empty($config['defaultInstance']) ? $config['defaultInstance'] : $this->getData('group.compute.instanceTypes.ondemand'));
+        $preferedInstance = (!empty($config['defaultInstance']) ? $config['defaultInstance'] : $this->getData('group.compute.instanceTypes.preferredSpot'));
         $arr =  [
             'instanceTypes' => [
                 'ondemand' => $defaultInstance,
-                'spot' => $this->getData('group.compute.instanceTypes.spot')
+                'spot' => $this->getData('group.compute.instanceTypes.spot'),
+                'preferredSpot' => [
+                    $preferedInstance
+                ]
             ],
             'availabilityZones' =>  $this->getData('group.compute.availabilityZones'),
             'product' => 'Linux/UNIX',

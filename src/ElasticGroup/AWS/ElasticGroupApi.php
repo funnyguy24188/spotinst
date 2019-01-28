@@ -95,7 +95,7 @@ class ElasticGroupApi extends BaseApi
             ],
 
         ];
-        
+
 
         return  $this->client->post($uri, $jsonData);
     }
@@ -205,6 +205,9 @@ class ElasticGroupApi extends BaseApi
         "spot": [
             "t2.small",
           "t3.small" 
+        ],
+        "preferredSpot": [
+          "t3.small"
         ]
       },
       "availabilityZones": [
