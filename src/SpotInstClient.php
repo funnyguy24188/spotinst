@@ -114,7 +114,7 @@ class SpotInstClient implements SpotInstClientInterface
             $uri = str_replace('{ACCOUNT_ID}', $this->spotAccountId, $uri);
 
             $guzzleRequestOptions = [
-                'json' => $jsonData,
+                'json' => !empty($jsonData) ? $jsonData : null,
                 'headers' => [
                     "Content-Type" => "application/json",
                     "Authorization" => "Bearer {$this->getAuth()}"
