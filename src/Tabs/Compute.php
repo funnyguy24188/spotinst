@@ -88,6 +88,7 @@ class Compute extends TabBase implements \SpotTabsInterface
                     $arr['launchSpecification']['userData']  = ThirdPartiesIntergration::getOpsWorksUserData($stackId, $stackType, $layerId);
                     $arr['launchSpecification']['healthCheckType']  = 'OPSWORKS';
                     $arr['launchSpecification']['healthCheckGracePeriod']  = isset( $config['gracePeriod'] ) ? $config['gracePeriod'] : 300 ;
+                    $arr['launchSpecification']['healthCheckUnhealthyDurationBeforeReplacement']  = 60;
                     break;
             }
         }
