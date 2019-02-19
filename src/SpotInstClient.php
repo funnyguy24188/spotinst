@@ -114,14 +114,21 @@ class SpotInstClient implements SpotInstClientInterface
             $uri = str_replace('{ACCOUNT_ID}', $this->spotAccountId, $uri);
 
             $guzzleRequestOptions = [
-                'json' => !empty($jsonData) ? $jsonData : null,
+                'json' => $jsonData,
                 'headers' => [
                     "Content-Type" => "application/json",
                     "Authorization" => "Bearer {$this->getAuth()}"
                 ]
             ];
+
+            if(empty($jsonData)) {
+                unset($guzzleRequestOptions['json']);
+            }
+
             $response = $this->guzzleClient->request('PUT', ($this->endingPoint . $uri), $guzzleRequestOptions);
+
         } catch (ClientException $e) {
+
             $ret = [];
             $jsonBody = json_decode($e->getResponse()->getBody());
             if(!empty($jsonBody->response->errors)) {
