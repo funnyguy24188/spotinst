@@ -21,8 +21,8 @@ class SpotInstProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
 
-        $accountId = config('devbox.resources.spotinst.account_id');
-        $accessToken = config('devbox.resources.spotinst.access_token');
+        $accountId = env('SPOTINST_ACCOUNT_ID');
+        $accessToken = env('SPOTINST_ACCESS_TOKEN');
 
         $this->app->singleton(\SpotInst\SpotInstClientInterface::class, function () use($accountId, $accessToken) {
             return new \SpotInst\SpotInstClient($accountId, $accessToken);

@@ -79,6 +79,7 @@ class ElasticGroupApi extends BaseApi
                 return [ 'response' => [ 'code' => NotValidParam::NOT_VALID_PARAMS, 'message' => $validator->errors() ]] ;
             }
         }
+
         $jsonData = [
             "group" => [
                 "name"=> $name,
@@ -95,8 +96,6 @@ class ElasticGroupApi extends BaseApi
             ],
 
         ];
-
-
         return  $this->client->post($uri, $jsonData);
     }
 

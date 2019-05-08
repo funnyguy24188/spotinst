@@ -33,6 +33,9 @@ class Compute extends TabBase implements \SpotTabsInterface
         $keyPair = $config['keyPair'];
         $product = $config['product'];
         $tags = $config['tags'];
+        $regionId = $config['regionId'];
+        $availabilityZone = $config['availabilityZone'];
+        $securityGroup = $config['securityGroup'];
 
         if(!$imageId) {
             throw new InvalidConfig('Image Id is empty');
@@ -48,7 +51,7 @@ class Compute extends TabBase implements \SpotTabsInterface
                     $preferedInstance
                 ]
             ],
-            'availabilityZones' =>  $this->getData('group.compute.availabilityZones'),
+            'availabilityZones' =>  $availabilityZone,
             'product' => 'Linux/UNIX',
 
             'privateIps' => $this->getData('group.compute.privateIps'),
@@ -56,7 +59,7 @@ class Compute extends TabBase implements \SpotTabsInterface
             'product' => $product,
             'launchSpecification' => [
                 'tags' => $tags,
-                'securityGroupIds' => $this->getData('group.compute.launchSpecification.securityGroupIds'),
+                'securityGroupIds' => [$securityGroup],
                 'monitoring' => false,
                 'networkInterfaces' => [
                     [

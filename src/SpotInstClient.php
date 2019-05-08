@@ -20,10 +20,10 @@ class SpotInstClient implements SpotInstClientInterface
      * SpotInstClient constructor.
      * @param string $spotAccountId
      */
-    public function __construct($spotAccountId, $accessToken)
+    public function __construct(string $spotAccountId, string $accessToken)
     {
         if(empty(trim($spotAccountId)) || empty(trim($accessToken))) {
-            throw new \Exception('SpotInst Account Params is not valid');
+            throw new \EmptyParamException('SpotInst Account Params is not valid');
         }
 
         $this->accessToken = $accessToken;
