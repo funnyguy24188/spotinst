@@ -33,7 +33,6 @@ class Compute extends TabBase implements \SpotTabsInterface
         $keyPair = $config['keyPair'];
         $product = $config['product'];
         $tags = $config['tags'];
-        $regionId = $config['regionId'];
         $availabilityZone = $config['availabilityZone'];
         $securityGroup = $config['securityGroup'];
 
