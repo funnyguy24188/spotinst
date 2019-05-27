@@ -11,7 +11,6 @@ class Compute extends TabBase implements \SpotTabsInterface
 
     public function validate()
     {
-
         return  \Validator::make($this->data, [
             'group.compute.launchSpecification.imageId' => 'required',
             'group.compute.launchSpecification.keyPair' => 'required',
@@ -23,7 +22,6 @@ class Compute extends TabBase implements \SpotTabsInterface
 
     public function build(array $config)
     {
-
         $thirdPartyType = $config['thirdPartyType'];
         $layerId = $config['layerId'];
         $stackType = $config['stackType'];
