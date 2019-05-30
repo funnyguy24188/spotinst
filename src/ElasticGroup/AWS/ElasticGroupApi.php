@@ -202,11 +202,9 @@ class ElasticGroupApi extends BaseApi
         "ondemand": "t3.small",
         "spot": [
             "t2.small",
-            "t3.small",
-            "t3a.small"              
+            "t3.small"                      
         ],
-        "preferredSpot": [
-          "t3a.small",
+        "preferredSpot": [      
           "t3.small"
         ]
       },
