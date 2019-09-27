@@ -205,7 +205,7 @@ class ElasticGroupApi extends BaseApi
             "t3.small"                      
         ],
         "preferredSpot": [      
-          "t3.small"
+          "t3a.small"
         ]
       },
       "availabilityZones": [
@@ -213,6 +213,12 @@ class ElasticGroupApi extends BaseApi
           "name": "ap-southeast-1a",
           "subnetIds": [
             "subnet-43e36627"
+          ]
+        },
+        {
+          "name": "ap-southeast-1b",
+          "subnetIds": [
+            "subnet-40853136"
           ]
         }
       ],
