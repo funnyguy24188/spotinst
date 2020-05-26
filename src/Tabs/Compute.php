@@ -40,6 +40,7 @@ class Compute extends TabBase implements \SpotTabsInterface
 
         $defaultInstance = (!empty($config['defaultInstance']) ? $config['defaultInstance'] : $this->getData('group.compute.instanceTypes.ondemand'));
         $preferedInstance = (!empty($config['defaultInstance']) ? $config['defaultInstance'] : $this->getData('group.compute.instanceTypes.preferredSpot'));
+        $ebsSize = (!empty($config['ebsSize']) ? $config['ebsSize'] : 8);
         $arr =  [
             'instanceTypes' => [
                 'ondemand' => $defaultInstance,
@@ -49,8 +50,6 @@ class Compute extends TabBase implements \SpotTabsInterface
                 ]
             ],
             'availabilityZones' =>  $availabilityZone,
-            'product' => 'Linux/UNIX',
-
             'privateIps' => $this->getData('group.compute.privateIps'),
             'elasticIps' => $this->getData('group.compute.elasticIps'),
             'product' => $product,
@@ -66,7 +65,14 @@ class Compute extends TabBase implements \SpotTabsInterface
                         'deviceIndex' => 0
                     ]
                 ],
-                //'imageId' => $this->getData('group.compute.launchSpecification.imageId', 'ami-c63d6aa5'),
+                'blockDeviceMappings' => [
+                    'deviceName' => '/dev/xvda',
+                    'ebs' => [
+                        'deleteOnTermination' => true,
+                        'volumeType' => 'GP2',
+                        'volumeSize' => $ebsSize
+                    ]
+                ],
                 'userData' => $userData,
                 'imageId' => $imageId,
                 'keyPair' => $keyPair,
