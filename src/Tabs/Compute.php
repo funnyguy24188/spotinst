@@ -66,11 +66,13 @@ class Compute extends TabBase implements \SpotTabsInterface
                     ]
                 ],
                 'blockDeviceMappings' => [
-                    'deviceName' => '/dev/xvda',
-                    'ebs' => [
-                        'deleteOnTermination' => true,
-                        'volumeType' => 'GP2',
-                        'volumeSize' => $ebsSize
+                    [
+                        'deviceName' => '/dev/xvda',
+                        'ebs' => [
+                            'deleteOnTermination' => true,
+                            'volumeType' => 'GP2',
+                            'volumeSize' => $ebsSize
+                        ]
                     ]
                 ],
                 'userData' => $userData,
